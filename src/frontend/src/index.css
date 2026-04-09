@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: Fraunces, serif;
+    --font-body: "DM Sans", sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+    --radius: 1rem;
+
+    --background: 0.99 0 0;
+    --foreground: 0.1 0 0;
+    --card: 0.98 0.01 50;
+    --card-foreground: 0.1 0 0;
+    --popover: 0.97 0.01 40;
+    --popover-foreground: 0.1 0 0;
+
+    --primary: 0.5 0.18 95;
+    --primary-foreground: 0.98 0 0;
+
+    --secondary: 0.88 0.02 50;
+    --secondary-foreground: 0.2 0 0;
+    --muted: 0.92 0.01 50;
+    --muted-foreground: 0.4 0 0;
+
+    --accent: 0.5 0.18 95;
+    --accent-foreground: 0.98 0 0;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.98 0 0;
+
+    --border: 0.88 0.01 50;
+    --input: 0.94 0.02 50;
+    --ring: 0.5 0.18 95;
+
+    --chart-1: 0.65 0.22 40;
+    --chart-2: 0.6 0.12 185;
+    --chart-3: 0.4 0.07 227;
+    --chart-4: 0.83 0.19 84;
+    --chart-5: 0.77 0.19 70;
+
+    --sidebar: 0.97 0.01 40;
+    --sidebar-foreground: 0.1 0 0;
+    --sidebar-primary: 0.5 0.18 95;
+    --sidebar-primary-foreground: 0.98 0 0;
+    --sidebar-accent: 0.92 0.01 50;
+    --sidebar-accent-foreground: 0.2 0 0;
+    --sidebar-border: 0.88 0.01 50;
+    --sidebar-ring: 0.5 0.18 95;
+  }
+
+  .dark {
+    --background: 0.12 0 0;
+    --foreground: 0.95 0 0;
+    --card: 0.16 0.01 40;
+    --card-foreground: 0.95 0 0;
+    --popover: 0.19 0.02 50;
+    --popover-foreground: 0.95 0 0;
+
+    --primary: 0.65 0.2 95;
+    --primary-foreground: 0.12 0 0;
+
+    --secondary: 0.22 0.01 40;
+    --secondary-foreground: 0.88 0 0;
+    --muted: 0.2 0.01 30;
+    --muted-foreground: 0.6 0 0;
+
+    --accent: 0.65 0.2 95;
+    --accent-foreground: 0.12 0 0;
+
+    --destructive: 0.65 0.19 22;
+    --destructive-foreground: 0.95 0 0;
+
+    --border: 0.25 0.02 50;
+    --input: 0.22 0.01 40;
+    --ring: 0.65 0.2 95;
+
+    --chart-1: 0.49 0.24 264;
+    --chart-2: 0.7 0.17 162;
+    --chart-3: 0.77 0.19 70;
+    --chart-4: 0.63 0.27 304;
+    --chart-5: 0.65 0.25 16;
+
+    --sidebar: 0.16 0.01 40;
+    --sidebar-foreground: 0.95 0 0;
+    --sidebar-primary: 0.65 0.2 95;
+    --sidebar-primary-foreground: 0.12 0 0;
+    --sidebar-accent: 0.22 0.01 40;
+    --sidebar-accent-foreground: 0.88 0 0;
+    --sidebar-border: 0.25 0.02 50;
+    --sidebar-ring: 0.65 0.2 95;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("/assets/fonts/Fraunces.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("/assets/fonts/DMSans.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/assets/fonts/JetBrainsMono.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass {
+    background-color: oklch(var(--background) / 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid oklch(var(--border) / 0.3);
+  }
+
+  .glass-card {
+    background-color: oklch(var(--background) / 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid oklch(var(--border) / 0.3);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-card:hover {
+    background-color: oklch(var(--background) / 0.7);
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  .shadow-soft {
+    @apply shadow-lg shadow-black/10;
+  }
+
+  .shadow-elevated {
+    @apply shadow-2xl shadow-black/15;
+  }
+
+  .fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+  }
+
+  .slide-up {
+    animation: slide-up 0.6s ease-out forwards;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

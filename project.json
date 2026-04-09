@@ -1,0 +1,31 @@
+{
+  "overview": "A premium e-commerce platform with ultra-modern animations, 3D product showcases, dark/light theme, and a full shopping experience including cart, checkout, user accounts, admin dashboard, wishlist, reviews, and Stripe payments.",
+  "features": [
+    "Full-screen hero with parallax and scroll-triggered animations",
+    "3D product viewer with rotation (Three.js)",
+    "Dark/light theme with glassmorphism design",
+    "Shopping cart with animated drawer",
+    "Stripe checkout with order success animation",
+    "Internet Identity authentication",
+    "Admin dashboard: product, order & user management",
+    "Image uploads via object storage",
+    "Wishlist and review/rating system",
+    "Product search with autocomplete and filters",
+    "Discount coupon system",
+    "Mobile bottom navigation and swipe gestures"
+  ],
+  "category": "e-commerce",
+  "tags": [
+    "e-commerce",
+    "animations",
+    "3d",
+    "gsap",
+    "three-js",
+    "dark-mode",
+    "stripe",
+    "admin",
+    "wishlist",
+    "reviews"
+  ],
+  "last_updated": "2026-04-09T14:37:47.157Z"
+}
